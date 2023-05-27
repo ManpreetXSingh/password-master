@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --primary-green: green;
+    --primary-green-light: rgb(13, 151, 13);
+
+    --primary-blue: #0084ff;
+    --secondary-blue: #00ccff;
+
+    --good-color: green;
+    --bad-color: red;
+
+    --primary-light: white;
+    --secondary-light: rgb(228, 228, 228);
+
+    --primary-dark: rgb(43, 43, 43);
+    --secondary-dark: rgb(102, 102, 102);
+
+    --shadow-color: rgba(0, 0, 0, 0.363);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background: linear-gradient(var(--primary-blue), var(--secondary-blue));
+}
+
+.center_text {
+    text-align: center;
+}
+
+.margin_block_1 {
+    margin-block: 1rem;
+}
+
+.margin_top_1 {
+    margin-top: 1rem;
+}
+
+main {
+    max-width: 25rem;
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+section {
+    background-color: var(--primary-light);
+    border-radius: 1rem;
+    margin-block: 1rem;
+    padding: 2rem;
+    box-shadow: -1rem 1rem 2rem var(--shadow-color);
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+p {
+    vertical-align: middle;
+    color: var(--secondary-dark);
+}
+
+#password_generated{
+    word-break: break-all;
+    color: var(--primary-dark);
+}
+
+ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+li {
+    color: var(--bad-color);
+    padding-left: 0;
+    margin-left: 0;
+}
+
+li::before {
+    content: "⨉ ";
+}
+
+.strength_good {
+    color: var(--good-color);
+}
+
+.strength_good::before {
+    content: "✓ ";
+}
+
+progress {
+    accent-color: var(--primary-green);
+}
+
+input[type="password"]{
+    background-color: var(--secondary-light);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.width_full {
+    width: 100%;
+}
+
+input:focus {
+    outline: 2px solid var(--primary-blue);
+}
+
+input[type="button"] {
+    background-color: var(--primary-green);
+    padding: 0.5rem 2rem;
+    color: var(--primary-light);
+    border: none;
+    border-radius: 0.5rem;
+}
+
+input[type="button"]:active {
+    background-color: var(--primary-green-light);
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Password Generator</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <section>
+                <h1>Password Checker</h1>
+                <progress
+                    id="pass_strength_progress"
+                    class="width_full"
+                    value="0"
+                    max="5"
+                ></progress>
+                <p class="margin_block_1">
+                    <input
+                        type="password"
+                        name="password"
+                        id="input_password"
+                        class="width_full"
+                        placeholder="password"
+                        minlength="8"
+                        required
+                    />
+                    <!-- <div id="pass_visiblity_container"><input type="checkbox" name="password_visibility" id="input_pass_visible"> <label for="input_pass_visible">Visible</label></div> -->
+                </p>
+                <ul>
+                    <li id="UP_indicator">Atleast one capital letter</li>
+                    <li id="LO_indicator">Atleast one small letter</li>
+                    <li id="NUM_indicator">Atleast one number</li>
+                    <li id="SPE_indicator">Atleast one special character</li>
+                    <li id="LEN_indicator">Minimum length of 8 characters</li>
+                </ul>
+            </section>
+            <section>
+                <h1>Password Generator</h1>
+                <p class="margin_top_1">Password Length <span id="pass_len_display">()</span></p>
+                <input
+                    type="range"
+                    name="password_length"
+                    id="input_password_length"
+                    class="width_full"
+                    value="15"
+                    max="100"
+                    min="1"
+                />
+                <p class="center_text margin_block_1" id="password_generated">########</p>
+                <div class="center_text">
+                    <input type="button" value="Generate" onclick="new_password()" />
+                </div>
+            </section>
+        </main>
+    </body>
+    <script src="script.js"></script>
+</html>
