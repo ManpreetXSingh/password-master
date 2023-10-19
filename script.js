@@ -24,6 +24,18 @@ function new_password() {
     pass_output.innerText = password;
 }
 
+// Copy text in the output area
+function copy_password() {
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+
+    const selection_range = document.createRange();
+    selection_range.selectNodeContents(pass_output);
+    selection.addRange(selection_range);
+
+    navigator.clipboard.writeText(pass_output.innerText);
+}
+
 // Set strength indicators and strength of the password
 function set_strength_indicators() {
     var password = pass_input.value;
@@ -75,9 +87,10 @@ function show_length_value() {
 
 pass_input.addEventListener("input", set_strength_indicators);
 pass_length.addEventListener("input", show_length_value);
+pass_output.addEventListener("click", copy_password);
 show_length_value();
 // NOT USED
-// function toggle_visivility(element) {
+// function toggle_visibility(element) {
 //     if (element.type === "password") {
 //         element.type = "text";
 //     } else {
